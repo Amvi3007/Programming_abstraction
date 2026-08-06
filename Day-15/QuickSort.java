@@ -3,14 +3,14 @@ import java.util.Arrays;
 public class QuickSort {
     static void quickSort(int[] arr,int low,int high){
         if(low<high){
-            int pivotIndex = partition(arr, low, high);
-            quickSort(arr, low, pivotIndex-1);
+            int pivotIndex = partition(arr, low, high); 
+            quickSort(arr, low, pivotIndex-1); // 
             quickSort(arr, pivotIndex+1, high);
         }
     }
     static int partition(int[] arr,int low,int high){
         int pivot = arr[high];
-        int i = low - 1;
+        int i = low - 1; // representing left side
         for(int j = low;j<high;j++){
             if(arr[j] < pivot){
                 i++;
@@ -23,7 +23,7 @@ public class QuickSort {
         arr[i+1] = arr[high];
         arr[high] = temp;
 
-        return i+1;
+        return i+1;// 2
     }
 
     public static void main(String[] args) {
@@ -32,3 +32,5 @@ public class QuickSort {
         System.out.print(Arrays.toString(arr));
     }
 }
+
+// 

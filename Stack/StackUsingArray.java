@@ -54,3 +54,7 @@ public class StackUsingArray {
         System.out.println("Top Element : " + st.peek());
     }
 }
+
+
+
+// Q155,739

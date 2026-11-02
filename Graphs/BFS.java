@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BFS {
-    public ArrayList<Integer> BFS(boolean[] visited,Queue<Integer>q,int root,ArrayList<Integer>list,ArrayList<ArrayList<Integer>> adj){
+    public static ArrayList<Integer> BFS(boolean[] visited,Queue<Integer>q,int root,ArrayList<Integer>list,ArrayList<ArrayList<Integer>> adj){
         visited[root] = true;
         q.add(root);
         while(!q.isEmpty()){
@@ -21,7 +21,7 @@ public class BFS {
         }
         return list;
     }
-    public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
+    public static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
         int V = adj.size();
         boolean []visited = new boolean[V];
         Queue<Integer> res = new LinkedList<>();
@@ -29,5 +29,22 @@ public class BFS {
         BFS(visited,res,0,list,adj);
         return list;
         
+    }
+
+    public static void main(String[] args) {
+        int adj[][] = {{2, 3, 1}, {0}, {0, 4}, {0}, {2}};
+        ArrayList<ArrayList<Integer>> x = new ArrayList<>();
+
+        for (int i = 0; i < adj.length; i++) {
+
+            ArrayList<Integer> temp = new ArrayList<>();
+
+            for (int j = 0; j < adj[i].length; j++) {
+                temp.add(adj[i][j]);
+            }
+
+            x.add(temp);
+        }
+        System.out.println(bfs(x));
     }
 }

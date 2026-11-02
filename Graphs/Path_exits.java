@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Path_exits {
-    public boolean checkPath(int V, int[][] edges, int src, int dest) {
+    public static  boolean checkPath(int V, int[][] edges, int src, int dest) {
         // Code here
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for(int i =0;i<V;i++){
@@ -38,6 +38,16 @@ public class Path_exits {
         }
         
         return false;
+     }
+
+     public static void main(String[] args) {
+        int V = 6;
+        int E = 4;
+        int edges[][] = {{0, 2}, {1, 2}, {0, 3}, {4, 5}};
+        int src = 1;
+        int dest = 5;
+
+        System.out.println(checkPath(V, edges, src, dest));
      }
 
 }
